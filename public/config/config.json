@@ -1,0 +1,10 @@
+{
+  "serviceProxy": {},
+  "PaaSCode": "00",
+  "ThemeIndex": 1,
+  "IsBreadcrumb": true,
+  "IsHeaderTab": true,
+  "IsShowCollapsedBtn": true,
+  "DefUnfold": true,
+  "IsCaptchaVerify": false
+}
