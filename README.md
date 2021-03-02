@@ -1,4 +1,4 @@
-# ys-ui-test
+# ys-base-cli
 
 ## Project setup
 ```
