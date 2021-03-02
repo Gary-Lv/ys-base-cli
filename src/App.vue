@@ -111,7 +111,10 @@
         };
         document.getElementById('app').className = themeName;
       }
-    }
+    },
+    mounted() {
+      console.log(window.GlobalConfig);
+    },
   }
 </script>
 
