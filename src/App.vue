@@ -113,7 +113,7 @@
       }
     },
     mounted() {
-      console.log(window.GlobalConfig);
+      // console.log(window.GlobalConfig);
     },
   }
 </script>
