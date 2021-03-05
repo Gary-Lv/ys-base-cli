@@ -6,9 +6,6 @@ import store from "./store";
 // 引入ysUI组件库
 import ysUI from "ys-ui";
 import "ys-ui/dist/styles/ys-ui.css";
-// IView
-// import ViewUI from "view-design";
-// import "view-design/dist/styles/iview.css";
 
 // 修改主题色配置
 import "./theme/index.less";
