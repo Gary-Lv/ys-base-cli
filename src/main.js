@@ -7,14 +7,14 @@ import store from "./store";
 import ysUI from "ys-ui";
 import "ys-ui/dist/styles/ys-ui.css";
 // IView
-import ViewUI from "view-design";
-import "view-design/dist/styles/iview.css";
+// import ViewUI from "view-design";
+// import "view-design/dist/styles/iview.css";
 
 // 修改主题色配置
 import "./theme/index.less";
 
 Vue.use(ysUI);
-Vue.use(ViewUI);
+// Vue.use(ViewUI);
 
 Vue.config.productionTip = false;
 

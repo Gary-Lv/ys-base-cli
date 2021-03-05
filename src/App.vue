@@ -9,22 +9,27 @@
       <br><br><br><br>
       <h1>YsUI自定义组件</h1>
       <YsButton>默认按钮</YsButton>&nbsp;&nbsp;
-      <ys-button type="primary">主要按钮</ys-button>&nbsp;&nbsp;
-      <ys-button type="info">信息按钮</ys-button>&nbsp;&nbsp;
-      <ys-button type="success">成功按钮</ys-button>&nbsp;&nbsp;
-      <ys-button type="warning">警告按钮</ys-button>&nbsp;&nbsp;
-      <ys-button type="error">错误按钮</ys-button>
+      <YsButton type="primary">主要按钮</YsButton>&nbsp;&nbsp;
+      <YsButton type="info">信息按钮</YsButton>&nbsp;&nbsp;
+      <YsButton type="success">成功按钮</YsButton>&nbsp;&nbsp;
+      <YsButton type="warning">警告按钮</YsButton>&nbsp;&nbsp;
+      <YsButton type="error">错误按钮</YsButton>
       <br /><br />
       <!-- 带图标的按钮 -->
-      <ys-button icon="icon-circle-plus-outline">我是带图标的</ys-button>&nbsp;&nbsp;
-      <ys-button icon="icon-edit" type="error">我是左侧带图标的</ys-button>&nbsp;&nbsp;
-      <ys-button icon="icon-delete" type="success" iconPositon="right">我是右侧带图标的</ys-button>
+      <YsButton icon="icon-circle-plus-outline">我是带图标的</YsButton>&nbsp;&nbsp;
+      <YsButton icon="icon-edit" type="error">我是左侧带图标的</YsButton>&nbsp;&nbsp;
+      <YsButton icon="icon-delete" type="success" iconPositon="right">我是右侧带图标的</YsButton>
       <br><br>
       <!-- loading 按钮 -->
-      <ys-button type="primary" loading>禁用loading按钮</ys-button>&nbsp;&nbsp;
-      <ys-button disabled>禁用按钮</ys-button>
+      <YsButton type="primary" loading>禁用loading按钮</YsButton>&nbsp;&nbsp;
+      <YsButton disabled>禁用按钮</YsButton>
 
       <br><br><br><br>
+      <h1>基于IView组件封装</h1>
+      <YSButtonIv type="primary">测试组件</YSButtonIv>
+      <br><br><br><br>
+
+
       <h1>IView组件</h1>
       <Button type="primary">Primary</Button>
       <br><br>
@@ -49,7 +54,13 @@
         <Checkbox label="苹果"></Checkbox>
         <Checkbox label="西瓜"></Checkbox>
       </CheckboxGroup><br><br>
-      <Switch size="large" />
+      <iSwitch size="large">
+        <span slot="open">开</span>
+        <span slot="close">关</span>
+      </iSwitch>&nbsp;&nbsp;
+      <iSwitch true-color="#13ce66" false-color="#ff4949" />&nbsp;&nbsp;
+      <iSwitch size="small" />
+      <br><br>
       <Select v-model="model1" style="width:200px">
         <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
       </Select><br><br>
@@ -113,7 +124,7 @@
       }
     },
     mounted() {
-      // console.log(window.GlobalConfig);
+      // this.ChanageTheme(1);
     },
   }
 </script>

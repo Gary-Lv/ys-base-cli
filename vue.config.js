@@ -87,7 +87,7 @@ module.exports = {
           test: /\.js$|\.json$|\.css/, // 匹配文件名
           threshold: 10240, // 对超过10240k的数据压缩
           minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
-          // deleteOriginalAssets: false, // 不删除源文件
+          deleteOriginalAssets: true, // 是否删除源文件
         })
       );
       // 删除console.log 和 注释
