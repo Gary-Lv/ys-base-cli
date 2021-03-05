@@ -3,6 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+//基本样式初始化
+import "./assets/normalize.css";
+
 // 引入ysUI组件库
 import ysUI from "ys-ui";
 import "ys-ui/dist/styles/ys-ui.css";
@@ -11,7 +14,6 @@ import "ys-ui/dist/styles/ys-ui.css";
 import "./theme/index.less";
 
 Vue.use(ysUI);
-// Vue.use(ViewUI);
 
 Vue.config.productionTip = false;
 

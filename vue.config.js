@@ -11,26 +11,20 @@ const resolve = (dir) => {
 
 // CDN预加载
 const externals = {};
+
+// "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
+// "https://cdn.jsdelivr.net/npm/vue-router@3.2.0/dist/vue-router.min.js",
+// "https://cdn.jsdelivr.net/npm/vuex@3.4.0/dist/vuex.min.js",
 const cdn = {
   // 开发环境
   dev: {
     css: [],
-    js: [
-      "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
-      "https://cdn.jsdelivr.net/npm/vue-router@3.2.0/dist/vue-router.min.js",
-      "https://cdn.jsdelivr.net/npm/vuex@3.4.0/dist/vuex.min.js",
-      "https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js",
-    ],
+    js: ["https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"],
   },
   // 生产环境
   build: {
     css: [],
-    js: [
-      "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
-      "https://cdn.jsdelivr.net/npm/vue-router@3.2.0/dist/vue-router.min.js",
-      "https://cdn.jsdelivr.net/npm/vuex@3.4.0/dist/vuex.min.js",
-      "https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js",
-    ],
+    js: ["https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"],
   },
 };
 
