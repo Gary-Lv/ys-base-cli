@@ -4,9 +4,16 @@ export default [
     path: "/",
     name: "_home",
     component: Main,
-    // redirect: "home",
+    redirect: "home",
     meta: {
       title: "首页",
     },
+    children: [
+      {
+        path: "home",
+        name: "home",
+        component: () => import("@/views/Home.vue"),
+      },
+    ],
   },
 ];

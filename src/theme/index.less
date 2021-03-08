@@ -2,7 +2,8 @@
 @import "~ys-ui/YsStyle/YsTheme/index.less";
 
 // 引入本地需要修改的样式文件
-@import "./systemTheme/pageBack.less";
+@import "./systemTheme/commonStyle.less"; // 框架公共区域换肤
+@import "./systemTheme/pageBack.less"; // demo 案例
 
 //蓝色
 .lan-theme {
@@ -10,6 +11,15 @@
   @bodyBackground: rgba(209, 62, 57, 1);
   .ChangeTheme(@mainColor, @bodyBackground);
   // 项目自定义组件/页面主题
+  .commonUi(
+    #242e42,
+    #1f293d,
+    #28354e,
+    #28354e,
+    rgba(1, 1, 1, 0.1),
+    #bfbfbf,
+    #bfbfbf
+  );
   .pageBack(rgba(58, 95, 157, 0.3));
 }
 //红色
@@ -34,5 +44,14 @@
   @bodyBackground: rgba(60, 65, 71, 1);
   .ChangeTheme(@mainColor, @bodyBackground);
   // 项目自定义组件/页面主题
+  .commonUi(
+    #2c2d33,
+    #2c2d33,
+    #3a3e46,
+    #3a3e46,
+    rgba(1, 1, 1, 0.1),
+    #bfbfbf,
+    #bfbfbf
+  );
   .pageBack(rgba(255, 183, 0, 0.3));
 }

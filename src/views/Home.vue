@@ -71,13 +71,67 @@
 <script>
   export default {
     name: 'Home',
-    components: {}
+    components: {},
+    data() {
+      return {
+        phone: 'apple',
+        fruit: ['苹果'],
+        cityList: [{
+            value: 'New York',
+            label: 'New York'
+          },
+          {
+            value: 'London',
+            label: 'London'
+          },
+          {
+            value: 'Sydney',
+            label: 'Sydney'
+          },
+          {
+            value: 'Ottawa',
+            label: 'Ottawa'
+          },
+          {
+            value: 'Paris',
+            label: 'Paris'
+          },
+          {
+            value: 'Canberra',
+            label: 'Canberra'
+          }
+        ],
+        model1: ''
+      }
+    },
+    methods: {
+      ChanageTheme(id) {
+        let themeName = "";
+        switch (id) {
+          case 1:
+            themeName = "lan-theme";
+            break;
+          case 2:
+            themeName = "red-theme";
+            break;
+          case 3:
+            themeName = "tlan-theme";
+            break;
+          case 4:
+            themeName = "yellow-theme";
+            break;
+        };
+        document.getElementById('app').className = themeName;
+      }
+    },
+    mounted() {
+      this.ChanageTheme(4);
+    },
   }
 </script>
 <style lang="less" scoped>
   .homePage {
     width: 100%;
-    height: 100%;
-    border: 1px solid red;
+    padding: 16px;
   }
 </style>
