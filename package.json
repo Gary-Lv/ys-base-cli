@@ -14,7 +14,7 @@
     "image-webpack-loader": "^7.0.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack-bundle-analyzer": "^4.4.0",
-    "ys-ui": "^1.0.2"
+    "ys-ui": "^1.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
