@@ -1,10 +1,10 @@
 <template>
   <div class="homePage pageBackground">
     <h1>换肤功能</h1>
-    <Button style="background:rgba(58, 95, 157, 1);color:white" @click="ChanageTheme(1)">蓝色</Button>&nbsp;&nbsp;
-    <Button style="background:rgba(209, 62, 57, 1);color:white" @click="ChanageTheme(2)">红色</Button>&nbsp;&nbsp;
-    <Button style="background:rgba(86, 177, 252, 1);color:white" @click="ChanageTheme(3)">天蓝色</Button>&nbsp;&nbsp;
-    <Button style="background:rgba(255, 183, 0, 1);color:white" @click="ChanageTheme(4)">黄色</Button>&nbsp;&nbsp;
+    <YsiButton style="background:rgba(58, 95, 157, 1);color:white" @click="ChanageTheme(1)">蓝色</YsiButton>&nbsp;&nbsp;
+    <YsiButton style="background:rgba(209, 62, 57, 1);color:white" @click="ChanageTheme(2)">红色</YsiButton>&nbsp;&nbsp;
+    <YsiButton style="background:rgba(86, 177, 252, 1);color:white" @click="ChanageTheme(3)">天蓝色</YsiButton>&nbsp;&nbsp;
+    <YsiButton style="background:rgba(255, 183, 0, 1);color:white" @click="ChanageTheme(4)">黄色</YsiButton>&nbsp;&nbsp;
     <br><br><br><br>
     <h1>YsUI自定义组件</h1>
     <YsButton>默认按钮</YsButton>&nbsp;&nbsp;
@@ -25,12 +25,12 @@
 
     <br><br><br><br>
     <h1>基于IView组件封装</h1>
-    <YSButtonIv type="primary">测试组件</YSButtonIv>
+    <YsButtonIv type="primary">测试组件</YsButtonIv>
     <br><br><br><br>
 
 
     <h1>IView组件</h1>
-    <Button type="primary">Primary</Button>
+    <YsiButton type="primary">Primary</YsiButton>
     <br><br>
     <Input v-model="value" placeholder="Enter something..." style="width: 300px" /><br><br>
     <Input search placeholder="Enter something..." style="width: 300px" /><br><br>
