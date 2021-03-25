@@ -43,14 +43,6 @@ module.exports = {
       .set("@", resolve("src"))
       .set("_c", resolve("src/components"));
 
-    // 压缩图片
-    config.module
-      .rule("images")
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-      .use("image-webpack-loader")
-      .loader("image-webpack-loader")
-      .options({ bypassOnDebug: true });
-
     // webpack 会默认给commonChunk打进chunk-vendors，所以需要对webpack的配置进行delete
     config.optimization.delete("splitChunks");
     config.plugin("html").tap((args) => {
@@ -134,6 +126,14 @@ module.exports = {
           },
         },
       };
+
+      // 压缩图片
+      config.module
+        .rule("images")
+        .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+        .use("image-webpack-loader")
+        .loader("image-webpack-loader")
+        .options({ bypassOnDebug: true });
 
       // 取消webpack打包警告
       config.performance = {

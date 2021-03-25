@@ -6,8 +6,32 @@
 @import "./systemTheme/pageBack.less"; // demo 案例
 
 //蓝色
-.lan-theme {
-  .ChangeTheme(rgba(58, 95, 157, 1), rgba(209, 62, 57, 1));
+.theme-blue {
+  .ChangeTheme(
+    #0061ff,
+    #2a364c,
+    white,
+    #0061ff,
+    #7d90b2,
+    #364766,
+    #13b38f,
+    #0091ff,
+    #e77930,
+    #d53939,
+    #2f3e59,
+    #405680,
+    #405680,
+    #7d90b2,
+    white,
+    #2f3e59,
+    #cfd7e5,
+    #364766,
+    #2f3e59,
+    #364766,
+    #405680,
+    #2f3e59,
+    #364766
+  );
   // 项目自定义组件/页面主题
   .commonUi(
     #242e42,
@@ -20,32 +44,36 @@
   );
   .pageBack(rgba(58, 95, 157, 0.3));
 }
-//红色
-.red-theme {
-  .ChangeTheme(rgba(209, 62, 57, 1), rgba(58, 95, 157, 1));
-  // 项目自定义组件/页面主题
-  .pageBack(rgba(209, 62, 57, 0.3));
-}
-//天空蓝
-.tlan-theme {
-  @mainColor: rgba(86, 177, 252, 1);
-  @bodyBackground: rgba(209, 62, 57, 1);
-  .ChangeTheme(@mainColor, @bodyBackground);
+//白蓝
+.theme-white {
+  .ChangeTheme(
+    #0061ff,
+    #2a364c,
+    white,
+    #0061ff,
+    #7d90b2,
+    #364766,
+    #13b38f,
+    #0091ff,
+    #e77930,
+    #d53939,
+    #2f3e59,
+    #405680,
+    #405680,
+    #7d90b2,
+    white,
+    #2f3e59,
+    #cfd7e5,
+    #364766,
+    #2f3e59,
+    #364766,
+    #405680,
+    #2f3e59,
+    #364766
+  );
   // 项目自定义组件/页面主题
   .pageBack(rgba(209, 62, 57, 0.3));
 }
 // 黄色
-.yellow-theme {
-  .ChangeTheme(rgba(255, 183, 0, 1), rgba(60, 65, 71, 1));
-  // 项目自定义组件/页面主题
-  .commonUi(
-    #2c2d33,
-    #2c2d33,
-    #3a3e46,
-    #3a3e46,
-    rgba(1, 1, 1, 0.1),
-    #bfbfbf,
-    #bfbfbf
-  );
-  .pageBack(rgba(255, 183, 0, 0.3));
+.theme-yellow {
 }
