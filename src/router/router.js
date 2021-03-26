@@ -1,6 +1,11 @@
 import Main from "_c/Main";
 export default [
   {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/Login.vue"),
+  },
+  {
     path: "/",
     name: "_home",
     component: Main,
@@ -13,6 +18,11 @@ export default [
         path: "home",
         name: "home",
         component: () => import("@/views/Home.vue"),
+      },
+      {
+        path: "Test",
+        name: "Test",
+        component: () => import("@/views/Test.vue"),
       },
     ],
   },

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { baseRequire_Store } from "ys-utils_js";
 
 Vue.use(Vuex);
 
@@ -15,10 +16,10 @@ files.keys().forEach((key) => {
   modules[name] = files(key).default || files(key);
 });
 
-// 将导入的基础请求服务加入
-// modules.BaseRequire = { ...BaseRequire };
-// modules.HeaderTabs = { ...HeaderTabs };
+// 将导入的基础Store数据
+modules.BaseCommon = { ...baseRequire_Store };
 Vue.use(Vuex);
-export default new Vuex.Store({
+const store = new Vuex.Store({
   modules: modules,
 });
+export default store;

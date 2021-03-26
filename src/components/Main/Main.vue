@@ -25,7 +25,7 @@
             <YsMTag :tagData="tagData"></YsMTag>
           </div>
           <div>
-            <YsMHeader @on-change-theme="ChangeTheme"></YsMHeader>
+            <YsMHeader :themeList="themeList" :nowUserInfo="nowUserInfo" @on-change-theme="ChangeTheme" @on-quit="Quit"></YsMHeader>
           </div>
         </div>
         <div class="content frame-content">
@@ -44,6 +44,12 @@
 </template>
 </template>
 <script>
+  import {
+    mapGetters
+  } from "vuex";
+  import {
+    ysSysAction
+  } from "ys-utils_js";
   export default {
     name: "Main",
     data() {
@@ -210,19 +216,43 @@
             ],
           },
         ],
+        // 当前登录人信息
+        nowUserInfo: {
+          userName: "",
+          userImg: "",
+          userInfo: []
+        },
+        // 换肤数据
+        themeList: [{
+            title: "蓝色主题",
+            themeName: "theme-blue",
+            themeColor: "#0061FF"
+          },
+          {
+            title: "白色主题",
+            themeName: "theme-white",
+            themeColor: "#FFFFFF"
+          }
+        ]
       };
     },
     mounted() {
       // 默认展示的皮肤
       this.ChangeTheme("theme-blue");
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 15; i++) {
         this.tagData.push({
           title: `标签${i+1}`,
           closable: true, //是否可关闭
         })
       };
+      // 菜单
+      this.meun_bean_list = this.getMenuList;
+      // 获取消息列表
+      this.getNewsList();
+      this.getNowUserInfo();
     },
     computed: {
+      ...mapGetters(['getCommData', 'getMenuList', 'getBtnPermission']),
       menuitemClasses: function () {
         return [
           'menu-item',
@@ -247,6 +277,60 @@
         }
         console.log(SelTheme);
         document.querySelector("body").className = SelTheme;
+      },
+      // 获取当前登录人信息
+      getNowUserInfo() {
+        let {
+          orguser_cn_name,
+          ent_no,
+          bl_dprl_expls1,
+          dept_cn_name
+        } = this.getCommData;
+        this.nowUserInfo = {
+          userName: orguser_cn_name,
+          userImg: "",
+          userInfo: [{
+              title: "工号",
+              value: ent_no
+            },
+            {
+              title: "姓名",
+              value: orguser_cn_name
+            },
+            {
+              title: "部门",
+              value: dept_cn_name
+            },
+            {
+              title: "岗位",
+              value: bl_dprl_expls1
+            }
+          ]
+        }
+      },
+      // 获取消息通知列表
+      async getNewsList() {
+        try {
+          const result = await ysSysAction.getMessages();
+          if (result) {
+            console.log(result, "**********");
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      // 退出登录
+      async Quit() {
+        try {
+          const result = await ysSysAction.userLoginOut();
+          if (result) {
+            this.$router.push({
+              name: "login"
+            })
+          }
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
   }

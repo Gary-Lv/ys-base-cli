@@ -2,6 +2,9 @@
   <div class="homePage pageBackground">
     <div>欢迎使用</div>
     <div>远舢Base项目框架</div>
+    <p>
+      <YsButton type="primary" @click="$router.push({name:'Test'})">测试页面</YsButton>
+    </p>
   </div>
 </template>
 
@@ -33,9 +36,14 @@
       font-size: 42px;
     }
 
-    &>div:last-child {
+    &>div:nth-child(2) {
       margin-top: 20px;
       font-size: 28px;
+    }
+
+    &>p {
+      margin-top: 20px;
+      text-align: center;
     }
   }
 </style>
