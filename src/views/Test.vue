@@ -3,6 +3,33 @@
     <p>
       <YsIcon type="md-arrow-back" size="32" @click.native="$router.go(-1)" />
     </p>
+    <br>
+    <h1>YS-UI组件库组件</h1>
+    <YsButton size="small">默认</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton>默认</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton size="large">默认</YsButton>
+    <br><br>
+    <YsButton type="primary" size="small">主按钮</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="primary">主按钮</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="primary" size="large">主按钮</YsButton>
+    <br><br>
+    <YsButton type="dashed" size="small">虚线按钮</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="dashed">虚线按钮</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="dashed" size="large">虚线按钮</YsButton>
+    <br><br>
+    <YsButton type="text" size="small">文字按钮</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="text">文字按钮</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="text" size="large">文字按钮</YsButton>
+    <br><br>
+    <YsButton type="success" size="small">Success</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="success">Success</YsButton>&nbsp;&nbsp;&nbsp;&nbsp;
+    <YsButton type="success" size="large">Success</YsButton>
+    <br><br><br>
+    <YsInput v-model="value" placeholder="请输入内容" style="width: 300px" /><br><br>
+    <YsInput search placeholder="请输入内容" style="width: 300px" /><br><br>
+
+    <br><br><br><br>
+    <h1>平台基础数据获取</h1>
     <div class="contentBox">
       <YsButton type="primary" @click="getData(1)">获取请求头信息</YsButton><br><br>
       <p>
@@ -17,13 +44,6 @@
         按钮列表信息：{{butList}}
       </p>
       <br>
-      <p>
-        <YsButton type="primary" @click="handleCancle">退出登录</YsButton>
-      </p>
-      <br>
-      <p>
-        <YsButton type="primary" @click="handleList">获取列表数据</YsButton>
-      </p>
     </div>
   </div>
 </template>
@@ -31,7 +51,9 @@
   import {
     mapGetters
   } from "vuex";
-  import { ysSysAction } from "ys-utils_js";
+  import {
+    ysSysAction
+  } from "ys-utils_js";
   export default {
     data() {
       return {
@@ -57,20 +79,9 @@
             break;
         }
       },
-      // 退出登录
-      async handleCancle() {
-        console.log('退出登录')
-        try {
-          const result = await ysSysAction.userLoginOut();
-          console.log(result, '-----------')
-        } catch (error) {
-          console.log(error);
-        }
-      },
       async handleList() {
         try {
           const result = await ysSysAction.getMessages();
-          console.log(result, '-----------')
         } catch (error) {
           console.log(error);
         }
