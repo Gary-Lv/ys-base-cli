@@ -43,13 +43,19 @@
       <p>
         按钮列表信息：{{butList}}
       </p>
-      <br>
+      <br><br><br><br>
+      <h1>接口服务调用测试</h1>
+      <YsButton type="primary" @click="getAPIData">获取接口数据</YsButton><br><br>
+      <p>
+        接口请求数据：{{apiData}}
+      </p>
     </div>
   </div>
 </template>
 <script>
   import {
-    mapGetters
+    mapGetters,
+    mapActions
   } from "vuex";
   import {
     ysSysAction
@@ -59,13 +65,15 @@
       return {
         commData: null,
         menuList: null,
-        butList: null
+        butList: null,
+        apiData: [],
       }
     },
     computed: {
       ...mapGetters(['getCommData', 'getMenuList', 'getBtnPermission']),
     },
     methods: {
+      ...mapActions(['SpringTestDeptView_queryTestDept', 'SpringTestDeptView_saveTestDept']),
       getData(i) {
         switch (i) {
           case 1:
@@ -85,7 +93,62 @@
         } catch (error) {
           console.log(error);
         }
-      }
+      },
+      // 获取接口数据
+      getAPIData() {
+        // 获取部门信息
+        this.SpringTestDeptView_queryTestDept({
+          testDeptInfo: {
+            dept_id: "0000000002"
+          }
+        }).then((result) => {
+          let {
+            data,
+            msg,
+            scode,
+            status
+          } = result;
+          if (status === "ok") {
+            this.apiData.push(data);
+          } else {
+            this.apiData.push({
+              message: msg,
+              scode: scode
+            })
+          }
+        }).catch(err => {
+          console.log(err);
+        })
+
+        // 新增部门
+        setTimeout(() => {
+          this.SpringTestDeptView_saveTestDept({
+            testDeptInfo: {
+              dept_name: "10001",
+              dept_type: 1,
+              dept_dsc: "bangtest"
+            },
+          }).then((result) => {
+            let {
+              data,
+              msg,
+              scode,
+              status
+            } = result;
+            if (status === "ok") {
+              this.apiData.push(data);
+            } else {
+              this.apiData.push({
+                message: msg,
+                scode: scode
+              })
+            }
+          }).catch(err => {
+            console.log(err);
+          })
+        }, 1500);
+      },
+
     },
   }
 </script>
