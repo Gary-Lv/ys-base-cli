@@ -1,4 +1,4 @@
-import { YsDispose } from "ys-utils_js"; // 统一处理接口返回数据
+import { ys_Dispose } from "ys-utils-js"; // 统一处理接口返回数据
 import DemoApi from "../../api/demo";
 
 const state = {};
@@ -9,7 +9,7 @@ const actions = {
   async SpringTestDeptView_queryTestDept({ commit }, params) {
     try {
       let result = await DemoApi.SpringTestDeptView_queryTestDept(params);
-      return YsDispose(result);
+      return ys_Dispose(result);
     } catch (error) {
       return error;
     }
@@ -18,7 +18,7 @@ const actions = {
   async SpringTestDeptView_saveTestDept({ commit }, params) {
     try {
       let result = await DemoApi.SpringTestDeptView_saveTestDept(params);
-      return YsDispose(result);
+      return ys_Dispose(result);
     } catch (error) {
       return error;
     }

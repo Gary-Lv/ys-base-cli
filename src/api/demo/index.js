@@ -1,11 +1,11 @@
-import { $http } from "ys-utils_js";
+import { ys_http } from "ys-utils-js";
 
 const DemoApi = {
   /**
    * demo 根据部门编号查询部门
    */
   SpringTestDeptView_queryTestDept: (data) => {
-    return $http.request({
+    return ys_http.request({
       url: "sa_SpringTestDeptView_queryTestDept.do",
       method: "POST",
       data,
@@ -16,7 +16,7 @@ const DemoApi = {
    * demo 新增部门
    */
   SpringTestDeptView_saveTestDept: (data) => {
-    return $http.request({
+    return ys_http.request({
       url: "sa_SpringTestDeptView_saveTestDept.do",
       method: "POST",
       data,

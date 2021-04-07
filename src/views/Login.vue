@@ -8,10 +8,8 @@
 
 <script>
   import {
-    ysSysAction
-  } from "ys-utils_js";
-  // vuex获取基础的数据信息 必须的  否则项目中拿不到数据
-  import init_commitData from "../utils/init_commitData";
+    ys_SysAction
+  } from "ys-utils-js";
   export default {
     name: 'YsLoginTest',
     components: {},
@@ -29,11 +27,12 @@
       // 登录
       async login(res) {
         try {
-          const result = await ysSysAction.userLogin(res, window.GlobalConfig.PaaSCode);
+          const result = await ys_SysAction.userLogin(res, window.GlobalConfig.PaaSCode);
           if (result) {
-            init_commitData(); // commit数据
-            this.$Message.success('登录成功~');
-            this.$router.push('/home');
+            this.$YsMessage.success('登录成功~');
+            this.$router.push({
+              name: "home"
+            });
           } else {
             this.$Message.error('账号或密码有误~');
           }

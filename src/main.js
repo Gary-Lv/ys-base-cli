@@ -11,10 +11,14 @@ import ysUI from "ys-ui";
 import "ys-ui/dist/styles/ys-ui.css";
 
 // // 引入iconfont
-// import "./assets/iconfont/iconfont.css";
+import "./assets/iconfont/iconfont.css";
 
 // 修改主题色配置
 import "./theme/index.less";
+
+// 设置默认皮肤
+import { setStystemTheme } from "./utils/init_commitData";
+setStystemTheme();
 
 Vue.use(ysUI);
 
