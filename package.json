@@ -14,8 +14,8 @@
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
     "webpack-bundle-analyzer": "^4.4.0",
-    "ys-ui": "^1.2.5",
-    "ys-utils_js": "^1.0.0"
+    "ys-ui": "^1.2.6",
+    "ys-utils-js": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
