@@ -27,7 +27,8 @@
     "less-loader": "^5.0.0",
     "utf-8-validate": "^5.0.4",
     "vue-template-compiler": "^2.6.11",
-    "compression-webpack-plugin": "^6.1.1"
+    "compression-webpack-plugin": "^6.1.1",
+    "postcss-plugin-px2rem": "^0.8.1"
   },
   "browserslist": [
     "> 1%",
