@@ -2,6 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+// 自适应
+import "ys-lib-flesible";
 
 //基本样式初始化
 import "./assets/normalize.css";
