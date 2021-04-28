@@ -7,6 +7,7 @@
  *    isHideBreadcrumb:(false) 当前页面是否隐藏面包屑组件  默认都显示  如果指定页面不显示 则设置为true
  *    isActive:(false) 当前路由是否可以通过面包屑点击跳转 默认都可以点击跳转
  *    isNotOpen:true  页面是否不开放  默认开放  如果为true 则不开放
+ *    keepAlive:false 是否缓存页面  默认不缓存
  * }
  */
 

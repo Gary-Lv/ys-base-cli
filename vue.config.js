@@ -144,12 +144,12 @@ module.exports = {
       };
 
       // 压缩图片
-      config.module
-        .rule("images")
-        .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-        .use("image-webpack-loader")
-        .loader("image-webpack-loader")
-        .options({ bypassOnDebug: true });
+      // config.module
+      //   .rule("images")
+      //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+      //   .use("image-webpack-loader")
+      //   .loader("image-webpack-loader")
+      //   .options({ bypassOnDebug: true });
 
       // 取消webpack打包警告
       config.performance = {
@@ -165,7 +165,7 @@ module.exports = {
       };
     } else {
       // 开启打包可视化
-      plugins.push(new WebpackBundleAnalyzerPlugin());
+      // plugins.push(new WebpackBundleAnalyzerPlugin());
     }
     // 打包时npm包转CDN
     config.externals = externals;

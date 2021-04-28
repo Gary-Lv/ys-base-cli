@@ -2,7 +2,7 @@
 * 框架公共区域换肤配置
 */
 
-.commonUi(@headerBackground,@siderBackground,@contentBackground,@contentCardBackground,@scrollbar-bgColor,@scrollbar-bgColor-thumb,@scrollbar-bgColor-thumb-hover) {
+.commonUi(@headerBackground,@siderBackground,@contentBackground,@contentCardBackground,@scrollbar-bgColor,@scrollbar-bgColor-thumb,@scrollbar-bgColor-thumb-hover,@headerLogoColor) {
   .frame {
     &-header {
       background-color: @headerBackground;
@@ -15,6 +15,10 @@
       &-card {
         background-color: @contentCardBackground;
       }
+    }
+    &-logo {
+      background-color: @headerBackground;
+      color: @headerLogoColor;
     }
   }
 

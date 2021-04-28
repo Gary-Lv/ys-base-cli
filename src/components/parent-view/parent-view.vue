@@ -1,7 +1,10 @@
 <template>
-  <keep-alive>
-    <router-view ref="child" />
-  </keep-alive>
+  <div>
+    <keep-alive>
+      <router-view ref="child" v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view ref="child" v-if="!$route.meta.keepAlive"></router-view>
+  </div>
 </template>
 <script>
   export default {

@@ -3,7 +3,7 @@
     <div class="layout-outer">
       <div class="siderBox animation frame-sider" :style="{width:`${collapsedWidth}px`}">
         <!-- logo -->
-        <div class="frame-logo">
+        <div class="frameLogo frame-logo">
           <img src="../../assets/small.png" alt="">
           <span v-if="isCollapsed">
             远舢Base
@@ -41,7 +41,10 @@
             </YsBreadcrumb>
           </div>
           <div class="contentCardBox frame-content-card">
-            <router-view />
+            <keep-alive>
+              <router-view v-if="$route.meta.keepAlive"></router-view>
+            </keep-alive>
+            <router-view v-if="!$route.meta.keepAlive"></router-view>
           </div>
         </div>
       </div>
@@ -234,7 +237,7 @@
       height: 100%;
 
       .frame-logo {
-        height: 48px;
+        height: 56px;
         width: 100%;
         margin-bottom: 16px;
         display: flex;
@@ -255,7 +258,7 @@
 
       .frame-menu {
         width: 100%;
-        height: calc(100% - 112px);
+        height: calc(100% - 120px);
       }
 
       .frame-collapsed {
@@ -277,8 +280,8 @@
 
       .headerBox {
         width: 100%;
-        height: 48px;
-        padding: 0 16px;
+        height: 56px;
+        padding: 0 16px 0 0;
         display: flex;
         flex-wrap: nowrap;
 
@@ -291,7 +294,7 @@
 
       .content {
         width: 100%;
-        height: calc(100% - 48px);
+        height: calc(100% - 56px);
         padding: 0 16px;
         overflow: hidden;
 
